@@ -4,22 +4,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://org.springframework.org/schema/beans/spring-beans-4.3.xsd
                     http://www.springframework.org/schema/context http://org.springframework.org/schema/beans/spring-context-4.3.xsd">
 
-    <bean id="compactDisc" class="com.zhaoxiang.beans.BlankDisc">
-        <constructor-arg name="title" value="Sgt. Peppers Lonely Hearts Club Band"/>
-        <constructor-arg name="artist" value="The Beatles"/>
-        <constructor-arg name="tracks">
-            <list>
-                <value>Sgt. Peppers Lonely Hearts Club Band</value>
-                <value>With a little Help from My Friends</value>
-                <value>Lucky in the Sky with Diamonds</value>
-                <value>Getting Better</value>
-                <value>Fixing a Hole</value>
-            </list>
-        </constructor-arg>
-    </bean>
-
-    <bean id="cdPlayer" class="com.zhaoxiang.beans.CDPlayer">
-        <property name="cd" ref="compactDisc"/>
-    </bean>
-
+    <beans profile="develop">
+        <bean id="cdPlayer" class="com.zhaoxiang.beans.CDPlayer">
+            <property name="cd" ref="compactDisc"/>
+        </bean>
+        <bean id="compactDisc" class="com.zhaoxiang.beans.BlankDisc">
+            <constructor-arg name="title" value="Sgt. Peppers Lonely Hearts Club Band"/>
+            <constructor-arg name="artist" value="The Beatles"/>
+            <constructor-arg name="tracks">
+                <list>
+                    <value>Sgt. Peppers Lonely Hearts Club Band</value>
+                    <value>With a little Help from My Friends</value>
+                    <value>Lucky in the Sky with Diamonds</value>
+                    <value>Getting Better</value>
+                    <value>Fixing a Hole</value>
+                </list>
+            </constructor-arg>
+        </bean>
+    </beans>
 </beans>
