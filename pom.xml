@@ -16,7 +16,8 @@
 
     <modules>
         <module>bean-wiring</module>
-        <module>spring-mvc</module>
+        <module>chapter06</module>
+        <module>chapter05</module>
     </modules>
 
     <dependencies>
